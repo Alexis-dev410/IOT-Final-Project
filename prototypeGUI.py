@@ -24,6 +24,12 @@ class Application(Frame): #child class of Frame
 	def LowerTemp(self):
 		print("temperature lowered")
 		#actual logic for lowering (turn on fake fan) below.
+		current_c = int(self.CelLabel["text"].split()[0])
+		new_c = current_c - 1
+		new_f = new_c * 9 / 5 + 32
+		
+		self.CelLabel["text"] = f"{new_c} C"
+		self.FarLabel["text"] = f"{new_f:.1f} F"
 
 root = Tk()
 root.title("Prototype GUI")
