@@ -1,5 +1,5 @@
 from tkinter import *
-
+#samantha jones
 class Application(Frame):
     def __init__(self, master):
         super(Application, self).__init__(master)
@@ -12,7 +12,7 @@ class Application(Frame):
                 'fahrenheit': 'F',
                 'lower': 'Lower',
                 'english': 'English',
-                'french': 'Francais'
+                'french': 'French'
             },
             'fr': {
                 'title': 'Temperature',
@@ -40,13 +40,13 @@ class Application(Frame):
         self.FarLabel.grid(row=2, column=2, sticky=W)
 
         self.CoolButton = Button(self, command=self.LowerTemp)
-        self.CoolButton.grid(row=4, column=0, sticky=W)
+        self.CoolButton.grid(row=4, column=0, padx=5, pady=5, sticky=W)
 
         # Language selection buttons
         self.english_btn = Button(self, text="English", command=lambda: self.set_language('en'))
         self.english_btn.grid(row=5, column=0, padx=5, pady=5, sticky=W)
 
-        self.french_btn = Button(self, text="Francais", command=lambda: self.set_language('fr'))
+        self.french_btn = Button(self, text="French", command=lambda: self.set_language('fr'))
         self.french_btn.grid(row=5, column=1, padx=5, pady=5, sticky=W)
         self.update_labels()
 
@@ -66,6 +66,7 @@ class Application(Frame):
     def LowerTemp(self):
         self.temperature_c -= 1
         self.update_labels()
+        print("temperature lowered")
 
     @staticmethod
     def celsius_to_fahrenheit(c):
