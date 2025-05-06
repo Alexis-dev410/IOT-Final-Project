@@ -41,6 +41,12 @@ class Application(Frame):
 
         self.CoolButton = Button(self, command=self.LowerTemp)
         self.CoolButton.grid(row=4, column=0, padx=5, pady=5, sticky=W)
+        
+        self.setLowerButton = Button(self, command=self.setLower)
+        self.setLowerButton.grid(row=3, column= 4, sticky=W)
+        
+        self.setHigherButton = Button(self, command= self.setHigher)
+        self.setHigherButton.grid(row=4, column=4, sticky=W)
 
         # Language selection buttons
         self.english_btn = Button(self, text="English", command=lambda: self.set_language('en'))
@@ -67,6 +73,11 @@ class Application(Frame):
         self.temperature_c -= 1
         self.update_labels()
         print("temperature lowered")
+        
+    def setLower(self):
+        pass
+    def setHigher(self):
+        pass
 
     @staticmethod
     def celsius_to_fahrenheit(c):
