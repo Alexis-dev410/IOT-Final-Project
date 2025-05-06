@@ -64,6 +64,7 @@ class Application(Frame):
         self.CoolButton["text"] = t['lower']
         self.english_btn["text"] = t['english']
         self.french_btn["text"] = t['french']
+        
 
     def set_language(self, lang_code):
         self.language = lang_code
