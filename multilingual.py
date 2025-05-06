@@ -76,9 +76,15 @@ class Application(Frame):
         print("temperature lowered")
         
     def setLower(self):
-        pass
+        self.temperature_c -= 1
+        self.update_labels()
+        print("Set Lower button pressed")
+
     def setHigher(self):
-        pass
+        self.temperature_c += 1
+        self.update_labels()
+        print("Set Higher button pressed")
+
 
     @staticmethod
     def celsius_to_fahrenheit(c):
