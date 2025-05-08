@@ -10,7 +10,8 @@ class Application(Frame):
                 'title': 'Temperature',
                 'celsius': 'C',
                 'fahrenheit': 'F',
-                'lower': 'Lower',
+                'increase': 'Increase',
+                'decrease': 'Decrease',
                 'english': 'English',
                 'french': 'French'
             },
@@ -18,7 +19,8 @@ class Application(Frame):
                 'title': 'Temperature',
                 'celsius': 'C',
                 'fahrenheit': 'F',
-                'lower': 'Diminuer',
+                'increase': 'Augmenter',
+                'decrease': 'Reduire',
                 'english': 'Anglais',
                 'french': 'Francais'
             }
@@ -39,8 +41,6 @@ class Application(Frame):
         self.FarLabel = Label(self)
         self.FarLabel.grid(row=2, column=2, sticky=W)
 
-        self.CoolButton = Button(self, command=self.LowerTemp)
-        self.CoolButton.grid(row=4, column=0, padx=5, pady=5, sticky=W)
         
         self.setLowerButton = Button(self, command=self.setLower)
         self.setLowerButton.grid(row=3, column= 4, sticky=W)
@@ -61,7 +61,8 @@ class Application(Frame):
         self.label1["text"] = t['title']
         self.CelLabel["text"] = f"{self.temperature_c} {t['celsius']}"
         self.FarLabel["text"] = f"{self.celsius_to_fahrenheit(self.temperature_c):.1f} {t['fahrenheit']}"
-        self.CoolButton["text"] = t['lower']
+        self.setLowerButton["text"] = t['decrease']
+        self.setHigherButton["text"] = t['increase']
         self.english_btn["text"] = t['english']
         self.french_btn["text"] = t['french']
         
@@ -70,10 +71,6 @@ class Application(Frame):
         self.language = lang_code
         self.update_labels()
 
-    def LowerTemp(self):
-        self.temperature_c -= 1
-        self.update_labels()
-        print("temperature lowered")
         
     def setLower(self):
         self.temperature_c -= 1
