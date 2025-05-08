@@ -54,7 +54,7 @@ def loop():
     while True:
         temp_c, temp_f = read_temperature()
         if temp_c is not None and temp_f is not None:
-            print(f"Temperature: {temp_c}°C / {temp_f}°F")
+            print(f"Temperature: {temp_c}C / {temp_f}F")
         else:
             print("Skipping invalid reading...")
         time.sleep(2)  # Read temperature every 2 seconds
